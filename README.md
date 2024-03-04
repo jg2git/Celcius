@@ -8,7 +8,7 @@ The project implements the following features
 - Interface to communicate with one or more temperature sensor devices
 - Periodically poll a list of sensors
 - Compare the current temperature with a threshold to trigger an alarm
-- Google Test unit test cases to test the functionalities
+- GTest unit test cases to test the functionalities
 
 ## Project files
 \src
