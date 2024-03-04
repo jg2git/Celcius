@@ -55,7 +55,7 @@ sensor_thermostat::sensor_thermostat(std::string sensor_name, unsigned int baud_
 * Member name: Default destructor
 * Arg: - 
 * return: - 
-* Description: - Default constructor of the temperature sensor.
+* Description: - Default destructor of the temperature sensor.
 *
 ***********************************************************************************************************************/
 sensor_thermostat::~sensor_thermostat()
@@ -175,7 +175,7 @@ int sensor_thermostat::read_sensor(float &read_data)
 }
 
 /**********************************************************************************************************************
-* Member name: get_threshold
+* Member name: check_threshold
 * Arg: bool& threshold
 * return: int
 * Description: Check the sensor data with the set point and update the alarm flag as true if the 
