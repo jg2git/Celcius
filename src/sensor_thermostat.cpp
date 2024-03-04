@@ -66,7 +66,7 @@ sensor_thermostat::~sensor_thermostat()
 * Member name: setup_sensor
 * Arg: unsigned int inode_address, unsigned int ireg_address, unsigned int ibaud_rate
 * return: int
-* Description: Initialises the temperature sensor with respect to its specific protocol and allocates and initialises 
+* Description: Initialises the temperature sensor with respect to its specific protocol, allocates and initialises 
 * the resources. We check for errors in parameters and setup the internal parameters necessary to communicate with the hardware.
 * We connect with the device and also setup the state of the connection. 
 *
@@ -102,7 +102,7 @@ int sensor_thermostat::setup_sensor(unsigned int inode_address, unsigned int ire
 * Member name: connect
 * Arg: void
 * return: int
-* Description: Setups the lower level sensor comm stack for connecting with the sensor and starts the conection procedure. 
+* Description: Setups up the lower level sensor comm stack for connecting with the sensor and starts the conection procedure. 
 * Currently the implementation is a stub or unspecified.
 *
 ***********************************************************************************************************************/
@@ -251,7 +251,7 @@ int sensor_thermostat::get_sensor_name(std::string &isensor_name)
 * Arg: void
 * return: int
 * Description - Check if the device is connected or not. If connected, first disconnect and then clean up. If the device
-* is not connected, cleanup the resources and reset the connection.
+* is not connected, cleanup the resources and reset the connection state.
 ***********************************************************************************************************************/
 int sensor_thermostat::shutdown_sensor(void)     
 {
