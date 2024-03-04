@@ -23,6 +23,7 @@ The project implements the following features
 Currently the build is supported for only the Linux bash environment. Run the makefile from the project base directory to recursively build the project and to update the build folder with the application and unit test binaries.
 
 For compiling the project:
+
 $:/Celcius/# make 
 
 For cleaning the project:
