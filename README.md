@@ -34,7 +34,7 @@ The binary output files in build/bin after a successful compilation are
 - celcius - application binary file
 - celcius_test - unit test binary file
 
-## Dependencies
+## Requirements
 - C++14 or later
 
 ## Tested platform
