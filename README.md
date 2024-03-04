@@ -1,5 +1,5 @@
 # Celcius
-## Qblox Temperature Alarm Project V0.1.0
+## Celcius - Temperature Alarm Project V0.1.0
 
 The repository contains the source code for the Celcius C++ project. The project is designed to periodically acquire temperature from sensors and alert the user with an alarm if there is an overshoot in temperature beyond a certain threshold.
 
@@ -7,8 +7,8 @@ The repository contains the source code for the Celcius C++ project. The project
 The project implements the following features 
 - Interface to communicate with one or more temperature sensor devices
 - Periodically poll a list of sensors
-- Compare the current temperature with a threshold to trigger a threshold
-- GTest unit test cases to test the functionalities
+- Compare the current temperature with a threshold to trigger an alarm
+- Google Test unit test cases to test the functionalities
 
 ## Project files
 \src
