@@ -27,6 +27,7 @@ For compiling the project:
 $:/Celcius/# make 
 
 For cleaning the project:
+
 $:/Celcius/# make clean
 
 The binary output files in build/bin after a successful compilation are
