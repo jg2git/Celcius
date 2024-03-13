@@ -13,23 +13,33 @@
 #include "sensor_thermostat.h"
 #endif
 
+#ifndef H_SENSOR_IR
+#define H_SENSOR_IR
+#include "sensor_ir.h"
+#endif
+
+#ifndef H_SENSOR_THERMAL
+#define H_SENSOR_THERMAL
+#include "sensor_thermal.h"
+#endif
+
 #include <string>
 #include <vector>
 
 namespace q_coding {
 	
 //Configuration data for temperature sensor A
-const std::string SENSOR_A_NAME = "Qblox Temperature Sensor A";
+const std::string SENSOR_A_NAME = "Qblox Thermostat Temperature Sensor";
 const unsigned int SENSOR_A_NODE_ADDR = 0x01;
 const unsigned int SENSOR_A_REG_ADDR = 0xAB;
 const unsigned int SENSOR_A_BAUD = 115200;
-const float SENSOR_A_THRESHOLD = 45.5;
+const float SENSOR_A_THRESHOLD = 4.5;
 //Configuration data for temperature sensor B	
-const std::string SENSOR_B_NAME = "Qblox Temperature Sensor B";	
+const std::string SENSOR_B_NAME = "Qblox IR Temperature Sensor";	
 const unsigned int SENSOR_B_NODE_ADDR = 0x01;
 const unsigned int SENSOR_B_REG_ADDR = 0xAB;	
 const unsigned int SENSOR_B_BAUD = 115200;
-const float SENSOR_B_THRESHOLD = 20;
+const float SENSOR_B_THRESHOLD = 45.5;
 
 const int SENSOR_A_TABLE_ENTRY = 0;
 const int SENSOR_B_TABLE_ENTRY = 1;
@@ -43,12 +53,7 @@ class data_acq {
 	int poll_devices(void);
 	int shutdown_devices(void);
 	
-	private:
-	std::vector <sensor_thermostat*> sensor_poll;	//List of temperature sensor devices to be read from
+	std::vector <sensor_thermal*> sensor_poll;	//List of temperature sensor devices to be read from
 };
 
 }
-
-
-
-
