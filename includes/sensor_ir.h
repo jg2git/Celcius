@@ -29,15 +29,15 @@ class sensor_ir : public sensor_thermal {
 	int setup_sensor(unsigned int node_address, unsigned int reg_address, unsigned int baud_rate);   //initialize the sensor
 	int print_param(void);                        //Print the values of the attributes of the sensor	
 	int get_sensor_name(std::string& sensor_name);//Get sensor name
-    int shutdown_sensor(void);                    //Shutdowns the sensor
+        int shutdown_sensor(void);                    //Shutdowns the sensor
 	int get_threshold(float& setpoint);           //Gets the threshold that is already set
-    int get_internal_param(	float& sensor_data, float& sensor_alarm_threshold, int& conn_state, int& error);
+        int get_internal_param(	float& sensor_data, float& sensor_alarm_threshold, int& conn_state, int& error);
 	
 	protected:
 	std::string sensor_name;                      //Name of the sensor
 	unsigned int baud_rate;                       //Communication interface baud rate
-    unsigned int node_address;                    //Communication node address
-    unsigned int reg_address;                     //Register address of the data to be read from
+        unsigned int node_address;                    //Communication node address
+        unsigned int reg_address;                     //Register address of the data to be read from
 	int sensor_type;                              //Sensor device type
 	
 	//Members that interact with the low level code or C functions
