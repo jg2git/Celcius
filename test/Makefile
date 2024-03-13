@@ -29,3 +29,4 @@ remove:
 
 clean:
 	rm $(CLFLAGS) celcius_test *.a *.o *.so
+	
