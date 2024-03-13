@@ -55,7 +55,7 @@ int data_acq::init_poll(void)
 	//We hardcode two temperature sensors
 	
 	if(sensor_poll.empty())
-	     sensor_poll = {new sensor_thermostat(SENSOR_A_NAME), new sensor_thermostat(SENSOR_B_NAME)};       //Check for the boundary conditions
+	     sensor_poll = { new sensor_thermostat(SENSOR_A_NAME),  new sensor_ir(SENSOR_B_NAME)};       //Allocate the list of sensors
 	 else
 		 return -1;
 	
