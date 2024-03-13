@@ -12,7 +12,9 @@ The project implements the following features
 
 ## Project files
 \src
-- sensor_thermistor.cpp - Communicates with the low level stack to interact with the temperature sensor to read the data
+- sensor_thermistor.cpp - Communicates with the low level stack to interact with the thermostat temperature sensor to read the data
+- sensor_ir.cpp - Communicates with the low level stack to interact with the IR temperature sensor to read the data
+- sensor_thermal.cpp - Abstract class for the temperature sensors
 - data_acq.cpp - Initialises, polls and checks a list of temperature sensors for current temperature values which are used to compare with a threshold to trigger an alarm incase of overshoot.
 - celcius.cpp - Main file that sets up and runs the application.
 
