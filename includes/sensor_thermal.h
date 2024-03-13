@@ -45,9 +45,9 @@ class sensor_thermal {
 	virtual int setup_sensor(unsigned int node_address, unsigned int reg_address, unsigned int baud_rate) = 0;   //initialize the sensor
 	virtual int print_param(void) = 0;                        //Print the values of the attributes of the sensor	
 	virtual int get_sensor_name(std::string& sensor_name) = 0;//Get sensor name
-    virtual int shutdown_sensor(void) = 0;                    //Shutdowns the sensor
+        virtual int shutdown_sensor(void) = 0;                    //Shutdowns the sensor
 	virtual int get_threshold(float& setpoint) = 0;           //Gets the threshold that is already set
-    virtual int get_internal_param(	float& sensor_data, float& sensor_alarm_threshold, int& conn_state, int& error) = 0;
+        virtual int get_internal_param(	float& sensor_data, float& sensor_alarm_threshold, int& conn_state, int& error) = 0;
 	
 	protected:
 	//Member variables of the class that holds information about the sensor
