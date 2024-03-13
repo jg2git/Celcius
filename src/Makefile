@@ -35,3 +35,4 @@ remove:
 
 clean:
 	rm $(CLFLAGS) celcius *.a *.o *.so
+	
