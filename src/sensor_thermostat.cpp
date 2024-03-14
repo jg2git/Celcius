@@ -22,7 +22,8 @@ namespace q_coding {
 *
 ***********************************************************************************************************************/
 
-sensor_thermostat::sensor_thermostat() : sensor_name("Qblox Thermostat Temperature Sensor"), sensor_type(SENSOR_THERMOSTAT)
+sensor_thermostat::sensor_thermostat() : sensor_name("Qblox Thermostat Temperature Sensor"), sensor_type(SENSOR_THERMOSTAT), 
+                                         baud_rate(0), node_address(0), reg_address(0)
 {
 	
 }
@@ -33,7 +34,8 @@ sensor_thermostat::sensor_thermostat() : sensor_name("Qblox Thermostat Temperatu
 * Description - Constructor of the temperature sensor that initialses with a sensor name as a parameter.
 *
 ***********************************************************************************************************************/
-sensor_thermostat::sensor_thermostat(std::string sensor_name) : sensor_name(sensor_name), sensor_type(SENSOR_THERMOSTAT)
+sensor_thermostat::sensor_thermostat(std::string sensor_name) : sensor_name(sensor_name), sensor_type(SENSOR_THERMOSTAT),
+                                                                baud_rate(0), node_address(0), reg_address(0)
 {
 	
 }
