@@ -68,7 +68,7 @@ int sensor_thermostat::setup_sensor(unsigned int inode_address, unsigned int ire
 	int status = 0;
 	
 	//Check for boundary errors
-    if((inode_address > MAX_NODE_ADDR_RANGE) || (ireg_address > MAX_REG_ADDR_RANGE) || (ibaud_rate > MAX_BAUD_RATE) || (ibaud_rate < MIN_BAUD_RATE) )
+        if((inode_address > MAX_NODE_ADDR_RANGE) || (ireg_address > MAX_REG_ADDR_RANGE) || (ibaud_rate > MAX_BAUD_RATE) || (ibaud_rate < MIN_BAUD_RATE) )
 		return -1;
 	
 	srand(time(NULL));                         //Random number generator to provide us a simulation of temperature values
@@ -156,7 +156,7 @@ int sensor_thermostat::read_sensor(float &read_data)
 	//Read from the sensor and extract the data 
 	//In our case we will generate the sensor value with a simple random generator
 	const int MULT_FACTOR = 10;
-    const int THERMOSTAT_FACTOR = 100;
+        const int THERMOSTAT_FACTOR = 100;
 	float random_number = std::rand() % (SENSOR_MAX_TEMP*MULT_FACTOR);
 	sensor_data = random_number/(THERMOSTAT_FACTOR);                      //Update the internal variable
 	read_data = sensor_data;                                      //Pass back the temperature data to the calling routine
@@ -192,11 +192,11 @@ int sensor_thermostat::set_threshold(float setpoint)
 {
 	if(setpoint <= SENSOR_MAX_TEMP)                            //Check for boundary error
 	{
-		alarm_threshold = setpoint;                            //Update the setpoint
-		return 0;
+	    alarm_threshold = setpoint;                            //Update the setpoint
+	    return 0;
 	}
 	else
-		return -1;
+	    return -1;
 }
 
 /**********************************************************************************************************************
@@ -221,7 +221,6 @@ int sensor_thermostat::print_param(void)
 {
 	std::cout << "sensor_data " << sensor_data << std::endl ; //Print out the internal data values for debugging or display
 	std::cout << "alarm_threshold " << alarm_threshold << std::endl;
-	
  	return 0;
 }
 /**********************************************************************************************************************
