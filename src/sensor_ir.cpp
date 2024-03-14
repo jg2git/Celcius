@@ -69,8 +69,8 @@ int sensor_ir::setup_sensor(unsigned int inode_address, unsigned int ireg_addres
 	int status = 0;
 	
 	//Check for boundary errors
-    if((inode_address > MAX_NODE_ADDR_RANGE) || (ireg_address > MAX_REG_ADDR_RANGE) || (ibaud_rate > MAX_BAUD_RATE) || (ibaud_rate < MIN_BAUD_RATE) )
-		return -1;
+        if((inode_address > MAX_NODE_ADDR_RANGE) || (ireg_address > MAX_REG_ADDR_RANGE) || (ibaud_rate > MAX_BAUD_RATE) || (ibaud_rate < MIN_BAUD_RATE) )
+	        return -1;
 	
 	srand(time(NULL));                         //Random number generator to provide us a simulation of temperature values
 	node_address = inode_address;              //Initialise the parameters from the input data    
@@ -82,9 +82,9 @@ int sensor_ir::setup_sensor(unsigned int inode_address, unsigned int ireg_addres
 	conn_state = SENSOR_INITIALIZED;          //Update the state machine to keep track of the state of the device
 	status = connect();                       //Connect to the device
 	if(!status)
-		conn_state = SENSOR_CONNECTED_STATE;  //Update the state machine based on the state of the connection 
+	    conn_state = SENSOR_CONNECTED_STATE;  //Update the state machine based on the state of the connection 
 	else
-		conn_state = SENSOR_ERROR;
+	    conn_state = SENSOR_ERROR;
 	return status;
 }
 
@@ -160,7 +160,6 @@ int sensor_ir::read_sensor(float &read_data)
 	float random_number = std::rand() % (SENSOR_MAX_TEMP*MULT_FACTOR);
 	sensor_data = random_number/MULT_FACTOR;                      //Update the internal variable
 	read_data = sensor_data;                                      //Pass back the temperature data to the calling routine
-    
 	return 0;
 }
 
@@ -175,10 +174,9 @@ int sensor_ir::read_sensor(float &read_data)
 int sensor_ir::check_threshold(bool& alarm)    
 {
 	if(sensor_data > alarm_threshold)                            //Check if the temperature is above the threshold
-		alarm = true;                                            //Update the alarm value as true
+	    alarm = true;                                            //Update the alarm value as true
 	else
-		alarm = false;                                           //Update the alarm value as false
-	
+	    alarm = false;                                           //Update the alarm value as false
 	return 0;
 }
 /**********************************************************************************************************************
@@ -192,11 +190,11 @@ int sensor_ir::set_threshold(float setpoint)
 {
 	if(setpoint <= SENSOR_MAX_TEMP)                            //Check for boundary error
 	{
-		alarm_threshold = setpoint;                            //Update the setpoint
-		return 0;
+	    alarm_threshold = setpoint;                            //Update the setpoint
+	    return 0;
 	}
 	else
-		return -1;
+	    return -1;
 }
 
 /**********************************************************************************************************************
@@ -221,7 +219,6 @@ int sensor_ir::print_param(void)
 {
 	std::cout << "sensor_data " << sensor_data << std::endl ; //Print out the internal data values for debugging or display
 	std::cout << "alarm_threshold " << alarm_threshold << std::endl;
-	
  	return 0;
 }
 /**********************************************************************************************************************
@@ -252,7 +249,7 @@ int sensor_ir::shutdown_sensor(void)
 	}
 	else
 	{
-		clean_up();                                          //Cleanup the resources 
+	    clean_up();                                          //Cleanup the resources 
 	}
 	conn_state = SENSOR_RESET_STATE;                         //Reset the state machine
 	return 0;
