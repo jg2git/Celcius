@@ -40,7 +40,7 @@ class sensor_ir : public sensor_thermal {
         unsigned int reg_address;                     //Register address of the data to be read from
 	int sensor_type;                              //Sensor device type
 	
-	//Calls that interact with the low level code or C functions
+	//Member functions that interact with the low level code or C functions
 	private:
 	int connect(void);       //connect to the sensor
 	int reset(void);         // reset the sensor
