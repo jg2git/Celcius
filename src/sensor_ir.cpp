@@ -23,7 +23,8 @@ namespace q_coding {
 *
 ***********************************************************************************************************************/
 
-sensor_ir::sensor_ir() : sensor_name("Qblox IR Temperature Sensor"), sensor_type(SENSOR_IR)
+sensor_ir::sensor_ir() : sensor_name("Qblox IR Temperature Sensor"), sensor_type(SENSOR_IR), baud_rate(0), 
+                         node_address(0), reg_address(0)
 {
 
 }
@@ -34,7 +35,8 @@ sensor_ir::sensor_ir() : sensor_name("Qblox IR Temperature Sensor"), sensor_type
 * Description - Constructor of the temperature sensor that initialses with a sensor name as a parameter.
 *
 ***********************************************************************************************************************/
-sensor_ir::sensor_ir(std::string sensor_name) : sensor_name(sensor_name), sensor_type(SENSOR_IR)
+sensor_ir::sensor_ir(std::string sensor_name) : sensor_name(sensor_name), sensor_type(SENSOR_IR), baud_rate(0), 
+                         node_address(0), reg_address(0)
 {
     
 }
