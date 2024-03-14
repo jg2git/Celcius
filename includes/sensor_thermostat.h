@@ -40,7 +40,7 @@ class sensor_thermostat : public sensor_thermal {
         unsigned int reg_address;                    //Register address of the data to be read from
 	int sensor_type;                             //Sensor device type
 	
-	//Methods to interact with the low level code or C functions
+	//Member fuctions to interact with the low level code or C functions
 	private:
 	int connect(void);       //connect to the sensor
 	int reset(void);         // reset the sensor
