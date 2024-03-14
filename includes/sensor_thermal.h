@@ -29,9 +29,9 @@ enum {
 } CONN_STATE; //States of the sensor device
 
 enum {
-	SENSOR_THERMOSTAT = 0,
+	SENSOR_THERMOSTAT = 1,
 	SENSOR_IR
-} DEVICE_TYPE;
+} DEVICE_TYPE; //Device type
 
 class sensor_thermal {
 	public:
@@ -51,12 +51,11 @@ class sensor_thermal {
 	
 	protected:
 	//Member variables of the class that holds information about the sensor
-    
-	int sensor_type;
-	float sensor_data;
-	float alarm_threshold;
-	int conn_state;
-	int error;
+	int sensor_type;                        //Device type
+	float sensor_data;                      //Temperature value
+	float alarm_threshold;                  //Threshold setpoint value
+	int conn_state;                         //Sensor connection state
+	int error;                              //Sensor error state
 	
 	
 };
