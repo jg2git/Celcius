@@ -83,7 +83,7 @@ int data_acq::poll_devices(void)
 		bool alarm=false;
 		std::string sensor_name;
 		
-	    q_sensor->read_sensor(read_temp);                     //Read the temperature from the sensor
+	        q_sensor->read_sensor(read_temp);                     //Read the temperature from the sensor
 		q_sensor->check_threshold(alarm);                     //Check the temperature with respect to the threshold and update the alarm if needed 
 		q_sensor->get_sensor_name(sensor_name);               //Get the name of the sensor
 		std::cout << sensor_name << ", Temperature: "<< read_temp << ", alarm state: " << alarm << std::endl; //Print the parameters for display
