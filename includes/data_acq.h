@@ -49,9 +49,9 @@ class data_acq {
 	data_acq();                                      //Default constructor
 	~data_acq();                                     //Default destructor
 	//Member functions of the class
-	int init_poll(void);
-	int poll_devices(void);
-	int shutdown_devices(void);
+	int init_poll(void);                             //Initialises the poll list
+	int poll_devices(void);                          //Polls the list of sensors
+	int shutdown_devices(void);                      //Shuts down the sensor devices
 	
 	std::vector <sensor_thermal*> sensor_poll;	//List of temperature sensor devices to be read from
 };
